@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { navigation } from "@/constants/menu"
 import { LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
-//import { useTheme } from "@/components/theme-provider"
+import { ModeToggle } from "./themeToggle"
 import {
   SidebarProvider,
   SidebarTrigger,
@@ -44,14 +44,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <h1 className="text-xl font-semibold">My App</h1>
           </div>
           <div className="flex items-center gap-2">
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button> */}
+            <ModeToggle />
             <Button variant="ghost" size="icon" onClick={handleLogout} aria-label="Logout">
               <LogOut className="h-5 w-5" />
             </Button>
